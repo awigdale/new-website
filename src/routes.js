@@ -7,9 +7,7 @@ import Art from './Art';
 const Routes = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
-      <Route path="/projects" component={Projects} />
-      <Route path="/art" component={Art} />
+      <Route path="/" component={Home} />
     </Switch>
   );
 };
