@@ -1,52 +1,34 @@
 * {
   font-family: Helvetica, sans-serif;
   overflow-x: hidden;
+  overflow-y: hidden;
+  cursor: url('/public/img/yellowflower.png'), auto;
 }
 
-#root {
-  padding: 3vh;
-}
-
+/* elements */
 h1 {
-  font-size: 15px;
-  font-weight: 100;
+  font-size: 45px;
+  font-weight: 600;
   color: #121f26;
-  margin: 0;
+  margin: 10px;
+  display: inline;
 }
 
 a {
-  font-size: 15px;
-  font-weight: 100;
   color: #121f26;
   text-decoration: none;
-  margin-right: 10px;
 }
 
-#firstname {
-  top: 0.75vh;
-  left: 0.25vw;
-  /* animation: name 1s; */
-  position: relative;
-}
-
-#lastname {
-  /* animation: last-name 1s; */
-  position: relative;
-  left: 0.25vw;
-}
-
-.name {
-  font-weight: 500;
-  font-size: 45px;
-}
-
-#navbar {
-  position: fixed;
-  right: 0;
-  margin-right: 5vw;
-  top: 8vh;
-  text-align: right;
-  z-index: 200;
+h2 {
+  cursor: pointer;
+  background: transparent;
+  padding-left: 20px;
+  /* font-family: "'Spectral', serif"; */
+  font-size: 18px;
+  font-weight: 600;
+  /* font-style: italic; */
+  color: #121f26;
+  margin: 4px;
 }
 
 h4 {
@@ -54,10 +36,11 @@ h4 {
   font-weight: 100;
 }
 h3 {
-  font-size: 14px;
+  font-size: 85px;
+  letter-spacing: -10px;
   font-weight: 100;
   margin: 10px;
-  cursor: pointer;
+  /* cursor: pointer; */
   display: inline;
 }
 
@@ -65,38 +48,6 @@ img {
   height: 60vh;
   margin: 2px;
   object-fit: contain;
-}
-
-.container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 67vw;
-  height: auto;
-  background: white;
-  z-index: 100;
-  position: absolute;
-  top: 10vh;
-  left: 18vw;
-  overflow: scroll !important;
-}
-
-.project-img {
-  margin: 15px;
-}
-
-#empty-div {
-  height: 10vh;
-}
-
-#home-page-print {
-  height: 100vh;
-  margin-left: 10vw;
-  margin-right: 10vw;
-  position: absolute;
-  top: 0;
-  left: 55vw;
-  animation: print 1s;
 }
 
 svg {
@@ -116,16 +67,171 @@ path {
   animation: draw 4s linear forwards;
   z-index: 0;
 }
-#smiley {
-  position: absolute;
-  left: 60vw;
+
+p {
+  background: transparent;
+  padding: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #a51600;
 }
 
-#limeline {
-  position: absolute;
-  left: 80vw;
-  top: 80vh;
+img {
+  height: 25vh;
+  object-fit: cover;
 }
+
+/* ids */
+
+#email {
+  cursor: pointer;
+  background: transparent;
+  padding-left: 20px;
+  font-family: "'Spectral', serif";
+  font-size: 40px;
+  font-weight: 100;
+  font-style: italic;
+  color: #7f9894;
+  border-bottom: 1px solid #7f9894;
+}
+
+#boxOutline {
+  border: 1px solid #d8f900;
+  grid-column: 9 / -2;
+  grid-row: 2 / -2;
+}
+
+#root {
+  width: 100vw;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#name {
+  /* font-family: 'Noto Serif SC', serif; */
+  font-size: 140px;
+  letter-spacing: -5px;
+  -webkit-text-stroke: 1px #2b424e;
+  color: transparent;
+  margin: 0;
+  grid-column: 3 / -3;
+  background: transparent;
+  z-index: 300;
+  text-align: center;
+}
+
+#newName {
+  font-family: 'Noto Serif SC', serif;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 55px;
+  letter-spacing: -5px;
+  color: #0949a4;
+  border: 1.5px solid #0949a4;
+  height: 250px;
+  width: 250px;
+  border-radius: 200px;
+  position: absolute;
+  padding: 60px;
+  transform: rotate(270deg);
+  grid-row: 3 / 10;
+  grid-column: 4 / 14;
+}
+
+#grid {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  height: 100vh;
+  position: relative;
+}
+
+#navbar {
+  grid-column: 2 / -2;
+  grid-row: 2 / 5;
+}
+
+#whitebox {
+  grid-row: 8 / -2;
+  cursor: pointer;
+  border: 0.5px solid #7f9894;
+}
+
+#teal {
+  background: #1c867a;
+  opacity: 0.9;
+}
+
+#green {
+  background: #d8f900;
+  grid-column: 2 / 4;
+  grid-row: 2 / 4;
+}
+
+#blue {
+  background: #35b3bf;
+}
+
+#gray {
+  background: #7f9894;
+  opacity: 0.6;
+}
+
+#gold {
+  background: #f6b600;
+}
+
+#red {
+  background: #a51600;
+}
+
+/* classes */
+
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 67vw;
+  height: auto;
+  background: white;
+  z-index: 100;
+  position: absolute;
+  top: 10vh;
+  left: 18vw;
+  overflow: scroll !important;
+}
+
+.project-img {
+  margin: 15px;
+}
+
+.categories:hover {
+  text-decoration: underline #f6b600;
+}
+
+.secret {
+  color: transparent;
+  /* font-size: 12px; */
+}
+
+.secret:hover {
+  color: #a51600;
+}
+
+/* .experience {
+  color: #0949a4;
+  text-decoration: none;
+  font-family: 'Noto Serif SC', serif;
+  font-size: 25px;
+  font-weight: 100;
+  line-height: 25px;
+  margin: 2px;
+} */
+
+/* animations */
+
 @keyframes draw {
   from {
     stroke-dashoffset: 1000;
