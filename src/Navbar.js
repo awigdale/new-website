@@ -1,13 +1,21 @@
 import React from 'react';
 
+const categories = ['developer', 'illustrator', 'designer', 'artist'];
+
 const NavBar = () => {
   return (
     <div id="navbar">
       <h1 style={{ float: 'right' }} className="categories">
-        Work
+        illustrator
       </h1>
       <h1 style={{ float: 'right' }} className="categories">
-        Art
+        developer
+      </h1>
+      <h1 style={{ float: 'right' }} className="categories">
+        artist
+      </h1>
+      <h1 style={{ float: 'right' }} className="categories">
+        designer
       </h1>
       {/* <div>
         <a href="https://github.com/awigdale" className="icon">
