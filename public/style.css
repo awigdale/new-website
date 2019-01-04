@@ -1,24 +1,18 @@
 * {
   font-family: 'Playfair Display', serif;
-  overflow-x: hidden;
+  overflow: hidden;
   cursor: url('/public/img/yellowflower.png'), auto;
 }
 
 /* elements */
 h1 {
-  font-size: 45px;
-  font-weight: 600;
-  color: #121f26;
+  font-size: 125px;
+  font-weight: 900;
+  color: white;
   padding: 5px;
-  text-decoration: underline #a51600;
   margin: 0px;
-  display: inline;
-  margin-left: 70px;
-}
-
-h1:hover {
-  background: #a51600;
-  cursor: pointer;
+  text-decoration: none;
+  line-height: 110px;
 }
 
 a {
@@ -26,29 +20,37 @@ a {
   text-decoration: none;
 }
 
-h2 {
-  font-family: 'Noto Sans', sans-serif;
+a:hover {
+  cursor: pointer;
+}
 
-  font-size: 35px;
-  font-weight: 600;
-  color: #121f26;
+h2 {
+  font-family: 'Lato', sans-serif;
+  font-weight: 100;
+  font-size: 18px;
+  color: #f2eae3;
 }
 
 h4 {
   font-size: 12px;
   font-weight: 100;
 }
+
 h3 {
   font-size: 18px;
   letter-spacing: -1px;
-  font-weight: 400;
+  text-align: center;
+  font-weight: 100;
   position: absolute;
+  color: #13242d;
 }
 
 img {
-  height: 60vh;
-  margin: 2px;
-  object-fit: contain;
+  filter: grayscale(100%);
+}
+
+img:hover {
+  filter: grayscale(0%);
 }
 
 svg {
@@ -81,24 +83,19 @@ img {
   position: absolute;
 }
 
+body {
+  background: #f2eae3;
+}
 /* ids */
 
-#email {
-  cursor: pointer;
-  background: transparent;
-  padding-left: 20px;
-  font-family: "'Spectral', serif";
-  font-size: 40px;
-  font-weight: 100;
-  font-style: italic;
-  color: #7f9894;
-  border-bottom: 1px solid #7f9894;
+#contact-link {
+  font-size: 15px;
+  font-weight: 600;
 }
 
-#boxOutline {
-  border: 1px solid #d8f900;
-  grid-column: 9 / -2;
-  grid-row: 2 / -2;
+#contact-link:hover {
+  text-decoration: underline #a51600;
+  cursor: pointer;
 }
 
 #root {
@@ -109,19 +106,6 @@ img {
   left: 0;
 }
 
-#name {
-  /* font-family: 'Noto Serif SC', serif; */
-  font-size: 140px;
-  letter-spacing: -5px;
-  -webkit-text-stroke: 1px #2b424e;
-  color: transparent;
-  margin: 0;
-  grid-column: 3 / -3;
-  background: transparent;
-  z-index: 300;
-  text-align: center;
-}
-
 #grid {
   display: grid;
   grid-template-columns: repeat(16, 1fr);
@@ -129,45 +113,6 @@ img {
   grid-auto-rows: 1fr;
   height: 100vh;
   position: relative;
-}
-
-#navbar {
-  grid-column: 2 / -2;
-  grid-row: 2 / 5;
-}
-
-#whitebox {
-  grid-row: 8 / -2;
-  cursor: pointer;
-  /* border: 0.5px solid #7f9894; */
-}
-
-#teal {
-  background: #1c867a;
-  opacity: 0.9;
-}
-
-#green {
-  background: #d8f900;
-  grid-column: 2 / 4;
-  grid-row: 2 / 4;
-}
-
-#blue {
-  background: #35b3bf;
-}
-
-#gray {
-  background: #7f9894;
-  opacity: 0.6;
-}
-
-#gold {
-  background: #f6b600;
-}
-
-#red {
-  background: #a51600;
 }
 
 /* classes */
@@ -202,16 +147,6 @@ img {
 .secret:hover {
   color: #a51600;
 }
-
-/* .experience {
-  color: #0949a4;
-  text-decoration: none;
-  font-family: 'Noto Serif SC', serif;
-  font-size: 25px;
-  font-weight: 100;
-  line-height: 25px;
-  margin: 2px;
-} */
 
 /* animations */
 
@@ -248,5 +183,14 @@ img {
   }
   to {
     left: 0.25vw;
+  }
+}
+
+@keyframes clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
   }
 }

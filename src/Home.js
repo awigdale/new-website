@@ -1,109 +1,129 @@
 import React, { Component } from 'react';
-import Art from './Art';
-import Projects from './Projects';
-import Resume from './Resume';
-import NavBar from './Navbar';
+
+let canvas;
+let ctx;
 
 class Home extends Component {
   state = {
-    isArt: false,
-    isExperience: false,
-    isSkills: false,
+    strokeStyle: 'rgba(19,36,45, 0.1)',
+    lineWidth: 190,
   };
 
-  handleArtClick() {
-    this.setState({
-      isArt: !this.state.isArt,
-    });
+  componentDidMount() {
+    canvas = this.refs.canvas;
+    ctx = canvas.getContext('2d');
   }
 
-  handleSkillsClick() {
-    this.setState({
-      isSkills: !this.state.isSkills,
-    });
-  }
-
-  handleExperienceClick() {
-    this.setState({
-      isExperience: !this.state.isExperience,
-    });
+  draw(event) {
+    ctx.strokeStyle = this.state.strokeStyle;
+    ctx.lineWidth = this.state.lineWidth;
+    ctx.lineJoin = 'round';
+    ctx.beginPath();
+    ctx.moveTo(0, 0);
+    ctx.lineTo(300, 100);
+    ctx.lineTo(100, 500);
+    ctx.lineTo(600, 400);
+    ctx.lineTo(800, 500);
+    ctx.lineTo(1000, 200);
+    ctx.lineTo(1300, 800);
+    ctx.lineTo(1400, 200);
+    ctx.lineTo(1000, 10);
+    ctx.lineTo(800, 100);
+    ctx.lineTo(600, 900);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.lineWidth = 120;
+    ctx.lineJoin = 'bevel';
+    ctx.beginPath();
+    ctx.moveTo(900, 9000);
+    ctx.lineTo(100, 100);
+    ctx.lineTo(400, 500);
+    ctx.lineTo(600, 10);
+    ctx.lineTo(1000, 200);
+    ctx.lineTo(1400, 800);
+    ctx.lineTo(700, 300);
+    ctx.closePath();
+    ctx.stroke();
   }
 
   render() {
     return (
       <div id="grid">
-        <img
-          src="/img/headshot2.png"
-          style={{
-            gridRow: '5/12',
-            gridColumn: '1 / 4',
-            objectFit: 'cover',
-            height: '100%',
-            width: '100%',
-            background: '#d8f900',
-          }}
-        />
-        <h2 style={{ gridColumn: '5 / 14', gridRow: '4/10' }}>
-          I'm
-          <h1>abby wigdale.</h1>
-          <br />
-          An illustrator, artist and developer based in Los Angeles.
-        </h2>
-        <img
-          src="/img/dancing.png"
-          style={{
-            gridRow: '7/17',
-            gridColumn: '8 / 17',
-            objectFit: 'cover',
-            width: '100%',
-            height: '100%',
-            background: '#ece7e7',
-          }}
-        />
-        <img
-          src="/img/golddance.png"
-          style={{
-            gridRow: '8/16',
-            gridColumn: '2 / 5',
-            objectFit: 'cover',
-            height: '100%',
-            width: '100%',
-            background: 'pink',
-          }}
-        />
-        <img
-          src="/img/bras2.jpg"
-          style={{
-            gridRow: '8/16',
-            gridColumn: '6 / 9',
-            objectFit: 'cover',
-            height: '100%',
-            width: '100%',
-            background: '#d8f900',
-          }}
-        />
-        <img
-          src="/img/headshot1.png"
-          style={{
-            gridRow: '9/17',
-            gridColumn: '14 / 17',
-            objectFit: 'cover',
-            height: '100%',
-            width: '100%',
-            background: '#d8f900',
-          }}
+        <canvas
+          ref="canvas"
+          width={window.innerWidth}
+          height={window.innerHeight}
+          onMouseMove={this.draw.bind(this)}
         />
 
-        {/* <h3 style={{ gridRow: '10 / 11', gridColumn: '5 / 10' }}>developer</h3> */}
-        {/* <a href="mailto:abby.wigdale@gmail.com">
-          <h2>let's chat</h2>
+        <a
+          href="https://www.linkedin.com/in/abby-wigdale/"
+          style={{
+            gridColumn: '2/3',
+            gridRow: '5/6',
+            zIndex: 300,
+          }}
+        >
+          <h2 id="contact-link">linkedin</h2>
         </a>
-        <a href="https://www.linkedin.com/in/abby-wigdale/">
-          <h2>linkedin</h2>
+        <a
+          href="https://github.com/awigdale"
+          style={{
+            gridColumn: '3/4',
+            gridRow: '4/5',
+            transform: 'rotate(270deg)',
+          }}
+        >
+          <h2 id="contact-link">github</h2>
         </a>
-        <a href="https://github.com/awigdale">
-          <h2>github</h2>
-        </a> */}
+        <a
+          href="mailto:abby.wigdale@gmail.com"
+          style={{ gridColumn: '5/9', gridRow: '15/16' }}
+        >
+          <h2 id="contact-link">contact me</h2>
+        </a>
+        <a
+          href="mailto:abby.wigdale@gmail.com"
+          style={{
+            gridColumn: '15/17',
+            gridRow: '14/15',
+            zIndex: 1000,
+          }}
+        >
+          <h2 id="contact-link">say hello</h2>
+        </a>
+        <h1
+          style={{
+            gridColumn: '9 / 17',
+            gridRow: '4/12',
+            zIndex: 200,
+            color: '#f2eae3',
+          }}
+        >
+          abby wigdale.
+        </h1>
+
+        <h1
+          style={{
+            gridColumn: '10 / 16',
+            gridRow: '3/12',
+            transform: 'rotate(90deg)',
+            zIndex: 300,
+          }}
+        >
+          abby wigdale.
+        </h1>
+        <h2
+          style={{
+            gridColumn: '2/9',
+            gridRow: '10/12',
+            zIndex: 1000,
+            textAlign: 'right',
+          }}
+        >
+          Passionate developer, designer, and illustrator based in Los Angeles.
+          Currently working as a freelance developer and designer.
+        </h2>
       </div>
     );
   }
